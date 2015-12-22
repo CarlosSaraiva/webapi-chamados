@@ -1,0 +1,11 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongodb": {
+    "host": "nirgendwo.ddns.net",
+    "name": "mongodb",
+    "connector": "mongodb"
+  }
+}

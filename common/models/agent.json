@@ -1,0 +1,28 @@
+{
+  "name": "Agent",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "issues": 
+    {
+      "type": "hasMany",
+      "model": "Issue",
+      "foreignKey": "agentId",
+      "through": "Ticket"
+     }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

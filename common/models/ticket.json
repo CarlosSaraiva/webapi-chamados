@@ -1,0 +1,35 @@
+{
+  "name": "Ticket",
+  "base": "RoleMapping",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "created": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+     "agent": {
+      "type": "belongsTo",
+      "model": "Agent",
+      "foreignKey": "agentId"
+    },
+    "issue": {
+      "type": "belongsTo",
+      "model": "Issue",
+      "foreignKey": "issueId"
+    }
+
+
+    },
+  "acls": [],
+  "methods": {}
+}

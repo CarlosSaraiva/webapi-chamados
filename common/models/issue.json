@@ -1,0 +1,29 @@
+{
+  "name": "Issue",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "created": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "agents": {
+      "type": "hasMany",
+      "model": "Agent",
+      "foreignKey": "issueId",
+      "through": "Ticket"
+     }
+    },
+  "acls": [],
+  "methods": {}
+}

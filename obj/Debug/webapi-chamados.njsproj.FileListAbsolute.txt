@@ -1,0 +1,2 @@
+C:\Users\Suporte\Documents\repositories\webapi-chamados\obj\Debug\webapi-chamados.njsprojResolveAssemblyReference.cache
+C:\Users\Suporte\Documents\repositories\webapi-chamados\bin\Microsoft.NodejsTools.WebRole.dll

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ProfilingTarget xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectTarget>
+    <TargetProject>6f258048-2a2b-40b5-a20b-02902211e585</TargetProject>
+    <FriendlyName>webapi-chamados</FriendlyName>
+  </ProjectTarget>
+</ProfilingTarget>

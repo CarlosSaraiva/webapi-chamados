@@ -22,8 +22,8 @@
       "model": "Agent",
       "foreignKey": "issueId",
       "through": "Ticket"
-     }
-    },
+    }
+  },
   "acls": [],
   "methods": {}
 }

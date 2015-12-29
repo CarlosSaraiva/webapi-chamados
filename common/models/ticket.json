@@ -17,7 +17,7 @@
   },
   "validations": [],
   "relations": {
-     "agent": {
+    "agent": {
       "type": "belongsTo",
       "model": "Agent",
       "foreignKey": "agentId"
@@ -27,9 +27,7 @@
       "model": "Issue",
       "foreignKey": "issueId"
     }
-
-
-    },
+  },
   "acls": [],
   "methods": {}
 }

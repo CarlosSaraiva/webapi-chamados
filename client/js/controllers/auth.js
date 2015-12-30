@@ -8,18 +8,19 @@ angular.module('app').controller('AuthLoginController', ['$scope', 'AuthService'
       };
 
     $scope.login = function() {
-      AuthService.login($scope.user.email, $scope.user.password)
-        .then(function(response) {
-          if(response == undefined){
-            $state.go('home');  
-            
-          }else{
-            $scope.alert = "Usuário/Senha não encontrado no sistema";
-          }
-          
-        });
-    };
-  }])
+        AuthService.login($scope.user.email, $scope.user.password)
+            .then(function (response) {
+                console.log(response);
+                if (response.userNotFound) {
+                    $scope.alert = "Usuário/Senha não encontrado no sistema";
+                } else {
+                    $state.go('home');
+                }
+
+            });
+        };
+
+      }])
   .controller('AuthLogoutController', ['$scope', 'AuthService', '$state',
       function($scope, AuthService, $state) {
     AuthService.logout()

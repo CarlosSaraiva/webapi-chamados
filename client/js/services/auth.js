@@ -1,17 +1,26 @@
 angular.module('app').factory('AuthService', ['Agent', '$q', '$rootScope', function(User, $q, $rootScope) {
     
     function login(email, password) {
-      return User.login({email: email, password: password}).$promise.then(function(response) {
-          $rootScope.currentUser = { 
-            realm: response.user.realm,           
-            id: response.user.id,
-            tokenId: response.id,
-            email: email
-          };
+            return User.login({ email: email, password: password }).$promise.then(function (response) {
 
-        }, function(error){
-          return error;
-        });
+                if (response.userNotFound) {
+                    return response;
+                } else {
+                    $rootScope.currentUser = {
+                        realm: response.user.realm,           
+                        id: response.user.id,
+                        tokenId: response.id,
+                        email: email
+                    };
+                    response.userNotFound = false;
+                    return response;
+                }                    
+
+            }, function(error){
+              return error;
+            });
+
+        
     }
 
     function logout() {

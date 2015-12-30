@@ -1,14 +1,18 @@
-module.exports = function(Agent) {
-    Agent.beforeRemote('login', function(context, user, next){
+module.exports = function(User) {
+    User.beforeRemote('login', function (context, user, next) {
+
         var req = context.req;
 
-        Agent.findOne({where: {
+        User.findOne({where: {
             email: req.body.email
             }
-        }, function(err, agent){            
-            //req.body.realm = agent.realm            
+        }, function(err, agent) {
+            if (!agent) {
+                context.res.send({userNotFound: true});
+            } else {
+                next();
+            }
         });
 
-        next();
     });
 };
